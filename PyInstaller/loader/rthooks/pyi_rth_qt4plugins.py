@@ -44,3 +44,9 @@ except ImportError:
 
 # We set "qt4_plugins" as only one path for Qt4 plugins
 QCoreApplication.setLibraryPaths([os.path.abspath(d)])
+
+# Fix some Qt5 errors in linux
+if sys.platform.startswith('linux'):
+    os.environ['FONTCONFIG_FILE'] = '/etc/fonts/fonts.conf'  # Address missing font configuration issue
+    os.environ['FONTCONFIG_PATH'] = '/etc/fonts/'
+    os.environ['QT_XKB_CONFIG_ROOT'] = '/usr/share/X11/xkb'  # Address keyboard input issue
