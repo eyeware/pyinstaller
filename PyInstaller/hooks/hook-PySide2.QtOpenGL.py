@@ -14,7 +14,3 @@ hiddenimports = ['PySide2.QtCore',
                  'PySide2.QtWidgets',
                  'PySide2.QtGui']
 
-binaries = []
-
-if is_linux:
-    binaries.extend(qt_plugins_binaries('xcbglintegrations', namespace='PySide2'))
